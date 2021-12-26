@@ -1,9 +1,19 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  justify-content: center;
+  align-items: center;
+}
+
 .title {
-  font-size: 2em;
+  font-family: "Ubuntu", sans-serif;
+  font-size: 3rem;
 }
 
 body {
-  font-family: 'Times New Roman', Times, serif;
+  font-family: "Ubuntu", sans-serif;
 }
 
 section {
@@ -13,25 +23,44 @@ section {
 .board {
   display: grid;
   grid-template-columns: repeat(3, auto);
-  width: 600px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  margin-left: auto;
-  margin-right: auto;
+  width: 37.5rem;
+  margin-bottom: 2rem;
 }
 
-.cell {
-  font-family: "Ubuntu", sans-serif;
+.square {
   font-weight: bold;
-  font-style: italic;
-  width: 200px;
-  height: 200px;
+  width: 12.5rem;
+  height: 12.5rem;
   border: 1px solid black;
   box-shadow: 0 0 0 1px black;
-  line-height: 200px;
-  font-size: 100px;
+  line-height: 12.5rem;
+  font-size: 6.25rem;
+  text-align: center;
 }
 
 .status {
   font-weight: bold;
+  font-size: 2rem;
+  min-height: 2.5rem;
+}
+
+.options {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  width: 11.833rem;
+  height: 4.13rem;
+}
+
+#X {
+}
+
+#restart {
+  margin-left: 1rem;
+}
+
+#O {
+  margin-left: 1rem;
 }

@@ -13,25 +13,25 @@
     <script src="/client.js" async defer></script>
   </head>
   <body>
-    <section>
+    <div class="container">
       <h1 class="title">Tic Tac Toe</h1>
+      <h2 id="winner" class="status"></h2>
       <div class="board">
-        <div id="0" data-cell-index="0" class="cell"></div>
-        <div id="1" data-cell-index="1" class="cell"></div>
-        <div id="2" data-cell-index="2" class="cell"></div>
-        <div id="3" data-cell-index="3" class="cell"></div>
-        <div id="4" data-cell-index="4" class="cell"></div>
-        <div id="5" data-cell-index="5" class="cell"></div>
-        <div id="6" data-cell-index="6" class="cell"></div>
-        <div id="7" data-cell-index="7" class="cell"></div>
-        <div id="8" data-cell-index="8" class="cell"></div>
+        <div id="0" class="square"></div>
+        <div id="1" class="square"></div>
+        <div id="2" class="square"></div>
+        <div id="3" class="square"></div>
+        <div id="4" class="square"></div>
+        <div id="5" class="square"></div>
+        <div id="6" class="square"></div>
+        <div id="7" class="square"></div>
+        <div id="8" class="square"></div>
       </div>
       <div class="options">
         <button id="X">Play as X</button>
         <button id="restart">Restart Game</button>
         <button id="O">Play as O</button>
       </div>
-      <h2 id="winner" class="status"></h2>
-    </section>
+    </div>
   </body>
 </html>
