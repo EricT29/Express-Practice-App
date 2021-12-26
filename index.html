@@ -14,8 +14,8 @@
   </head>
   <body>
     <section>
-      <h1 class="game--title">Tic Tac Toe</h1>
-      <div class="game--container">
+      <h1 class="title">Tic Tac Toe</h1>
+      <div class="board">
         <div id="0" data-cell-index="0" class="cell"></div>
         <div id="1" data-cell-index="1" class="cell"></div>
         <div id="2" data-cell-index="2" class="cell"></div>
@@ -26,10 +26,12 @@
         <div id="7" data-cell-index="7" class="cell"></div>
         <div id="8" data-cell-index="8" class="cell"></div>
       </div>
-      <button id="X">Play as X</button>
-      <button id="restart">Restart Game</button>
-      <button id="O">Play as O</button>
-      <h2 id="winner" class="game--status"></h2>
+      <div class="options">
+        <button id="X">Play as X</button>
+        <button id="restart">Restart Game</button>
+        <button id="O">Play as O</button>
+      </div>
+      <h2 id="winner" class="status"></h2>
     </section>
   </body>
 </html>

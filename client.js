@@ -3,7 +3,7 @@ var computerSymbol = "O";
 var playerTurn = true;
 var gameOn = true;
 
-let con = io.connect("http://localhost:3000");
+let con = io.connect();
 
 con.on("updateBoard", (data) => {
   document.getElementById(data[0]).innerHTML = computerSymbol;

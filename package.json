@@ -1,0 +1,25 @@
+{
+  "name": "express-practice-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "client.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "socket.io": "^4.3.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EricT29/Express-Practice-App.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EricT29/Express-Practice-App/issues"
+  },
+  "homepage": "https://github.com/EricT29/Express-Practice-App#readme"
+}

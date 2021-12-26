@@ -1,6 +1,5 @@
 const express = require("express");
 const app = express();
-const { performance } = require("perf_hooks");
 
 app.use(express.static(__dirname + "/"));
 app.get("/", (req, res) => {
@@ -45,18 +44,20 @@ function declareWinner(first, second, third) {
 }
 
 function shuffle(array) {
-  let currentIndex = array.length,  randomIndex;
+  let currentIndex = array.length,
+    randomIndex;
 
   // While there remain elements to shuffle...
   while (currentIndex != 0) {
-
     // Pick a remaining element...
     randomIndex = Math.floor(Math.random() * currentIndex);
     currentIndex--;
 
     // And swap it with the current element.
     [array[currentIndex], array[randomIndex]] = [
-      array[randomIndex], array[currentIndex]];
+      array[randomIndex],
+      array[currentIndex],
+    ];
   }
 
   return array;
@@ -82,7 +83,7 @@ function getBestMove(symbol, board) {
   }
 
   // evaluate the available moves in random order
-  shuffle(availableMoves);
+  availableMoves = shuffle(availableMoves);
 
   for (let i = 0; i < availableMoves.length; i++) {
     let move = availableMoves[i];
@@ -155,11 +156,11 @@ function getBestMove(symbol, board) {
   }
 
   if (bestMoves.length > 0) {
-    return bestMoves[getRandomInt(0, bestMoves.length-1)];
+    return bestMoves[getRandomInt(0, bestMoves.length - 1)];
   } else if (neutralMoves.length > 0) {
-    return neutralMoves[getRandomInt(0, neutralMoves.length-1)];
+    return neutralMoves[getRandomInt(0, neutralMoves.length - 1)];
   } else if (losingMoves.length > 0) {
-    return losingMoves[getRandomInt(0, losingMoves.length-1)];
+    return losingMoves[getRandomInt(0, losingMoves.length - 1)];
   } else {
     return [0, 0];
   }
@@ -209,14 +210,10 @@ socket.on("connection", (client) => {
       if (gameOn) {
         // computer's turn
         playerTurn = false;
-        let startTime = performance.now();
         computerMove = getBestMove(computerSymbol, board);
-        let endTime = performance.now();
         board[computerMove[0]] = computerSymbol;
         moveCount++;
         checkBoard();
-        console.log(endTime - startTime);
-        console.log(board);
         playerTurn = true;
         client.emit("updateBoard", computerMove);
       }
