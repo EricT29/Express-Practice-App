@@ -1,3 +1,9 @@
+@media screen and (max-width: 2000px) {
+  html {
+    font-size: 50%;
+  }
+}
+
 .container {
   display: flex;
   flex-direction: column;
